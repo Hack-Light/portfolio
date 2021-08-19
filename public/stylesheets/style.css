@@ -833,9 +833,9 @@ p {
   position: relative;
 }
 
-.journal-block .journal-info .journal-txt h4 a {
+.journal-block .journal-info .journal-txt h4  {
   display: block;
-  font-size: 19px;
+  font-size: 15px;
   line-height: 24px;
   margin: 0 0 13px 0;
   font-weight: 500;
@@ -843,10 +843,10 @@ p {
   transition: all 0.5s ease-in-out 0s;
 }
 
-.journal-block .journal-info .journal-txt h4 a:hover {
-  color: #b8a07e;
-  transition: all 0.5s ease-in-out 0s;
-}
+/* .journal-block .journal-info .journal-txt h4:hover { */
+  /* color: #b8a07e; */
+  /* transition: all 0.5s ease-in-out 0s; */
+/* } */
 
 .journal-block .journal-info .journal-txt p {
   margin: 0;
@@ -1493,8 +1493,8 @@ blockquote {
 /* custom */
 
 .img-responsive{
-  height: 500px;
-  width: 500px;
+  height: 300px;
+  width: 300px;
   object-fit: contain;
 }
 
@@ -1510,7 +1510,7 @@ blockquote {
 
 
 .hero-content p {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 2px;
   font-weight: 300;
   line-height: 20px;

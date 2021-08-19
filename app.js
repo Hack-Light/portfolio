@@ -5,8 +5,7 @@ var path = require("path");
 // var logger = require("morgan");
 
 var indexRouter = require("./routes/indexRouter");
-var teamsRouter = require("./routes/teamsRouter");
-var authRouter = require("./routes/authRouter");
+
 
 var app = express();
 
@@ -26,8 +25,7 @@ app.use("/img", express.static(path.join(__dirname, "/public/images")));
 app.use("/vendor", express.static(path.join(__dirname, "/public/vendor")));
 
 app.use("/", indexRouter);
-app.use("/teams", teamsRouter);
-app.use("/auth", authRouter);
+
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
