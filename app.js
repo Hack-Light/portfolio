@@ -1,13 +1,30 @@
-// var createError = require("http-errors");
-var express = require("express");
-var path = require("path");
-// var cookieParser = require("cookie-parser");
-// var logger = require("morgan");
 
-var indexRouter = require("./routes/indexRouter");
+const express = require("express");
+const path = require("path");
+
+const mongoose = require("mongoose");
+const indexRouter = require("./routes/indexRouter");
 
 
-var app = express();
+const dbOptions = {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+};
+
+mongoose
+  .connect(
+    process.env.DATABASE_URI || "mongodb://localhost:27017/resume",
+    dbOptions
+  )
+  .then(() => {
+    console.log(`Connected to mongodb successfully`);
+  })
+  .catch(e => {
+    console.log(e);
+  });
+
+
+const app = express();
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -43,8 +60,7 @@ app.use(function (err, req, res, next) {
   res.render("error");
 });
 
-app.listen(3800, () => {
+app.listen(process.env.PORT || 3800, () => {
   console.log("listening on port 3000");
 });
 
-module.exports = app;
